@@ -1,0 +1,161 @@
+
+:root{
+    --primary-color: purple;
+    --secondary-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--secondary-color);
+    flex-direction: column;
+}
+
+#home {
+    background: url('/mnt/data/image.png') no-repeat center center/cover;
+    color: var(--secondary-color);
+}
+
+.hero-text {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.section h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.section p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#join {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.support-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.support-buttons .btn {
+    margin: 0.5rem 0;
+}
+
+footer {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    header .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.3rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    #join {
+        flex-direction: column-reverse;
+    }
+
+    .support-buttons .btn {
+        margin: 0.3rem 0;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+    }
+}
