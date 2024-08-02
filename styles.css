@@ -116,7 +116,18 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
+.logo img {
+    height: 50px;
+}
+.logo img:invalid {
+    display: none;
+}
+.logo span {
+    display: none;
+}
+.logo img:invalid + span {
+    display: inline;
+}
 @media (max-width: 600px) {
     header {
         padding: 0.5rem 0;
