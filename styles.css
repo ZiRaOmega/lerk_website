@@ -1,6 +1,6 @@
 
 :root{
-    --primary-color: purple;
+    --primary-color: #7F14B0;
     --secondary-color: white;
 }
 
@@ -117,7 +117,7 @@ footer {
     bottom: 0;
 }
 .logo img {
-    height: 50px;
+    height: 50px;;
 }
 .logo img:invalid {
     display: none;
