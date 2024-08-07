@@ -189,6 +189,7 @@ footer {
 
     #join {
         flex-direction: column-reverse;
+        margin-top: 10rem;
     }
 
     .support-buttons .btn {
