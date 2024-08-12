@@ -10,60 +10,103 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="img/logo.jpg" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-            <span>LERK!</span>
+        <div class="header-inner">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span>LERK!</span>
+            </div>
+            <div class="burger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#movement">Notre Mouvement</a></li>
+                    <li><a href="#program">Programme</a></li>
+                    <li><a href="#join">Rejoindre</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="burger-menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#movement">Notre Mouvement</a></li>
-                <li><a href="#program">Programme</a></li>
-                <li><a href="#join">Rejoindre</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section id="home" class="section">
-        <div class="hero-text">
-            <h2>Rejoignez nos 100 000 membres !</h2>
-            <a href="#join" class="btn">Rejoindre maintenant</a>
+    <section id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Rejoignez nos 100 000 membres !</h2>
+                <a href="#join" class="btn">Rejoindre maintenant</a>
+            </div>
         </div>
     </section>
 
+    <div class="section-separator"></div>
+
     <section id="movement" class="section">
-        <h2>Notre Mouvement</h2>
-        <p>LERK est un parti politique qui a vu le jour en 2019 Initier pour Mr blanhard Teta Mwamba et ces cos-fondateurs animées apr Q patriotismes, ayant toutes un point commun celui du changement. Créer dans le but d 'établir un pont entre la diaspora congolais de les congolais vivant en Rdc. Nous cuvrons politiquement en France,états unis,Russie Belgique, Allemagne, Chine,Canada et Rdc Lisanga des élites pour le renouveau du kongo est un parti qui prône la social démocratie. Nous luttons pour un état de droit afin d'instaurer une justice sociale.</p>
-        <a href="#program" class="btn">Voir le Programme</a>
+        <div class="content-wrapper">
+            <div class="text-container">
+                <h2>Notre Mouvement</h2>
+                <p>LERK est un parti politique qui a vu le jour en 2019...</p>
+                <a href="#program" class="btn">Voir le Programme</a>
+            </div>
+            <div class="image-container">
+                <img src="img/suit.jpg" alt="Suit Image" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+            </div>
+        </div>
     </section>
+
+    <div class="section-separator"></div>
 
     <section id="program" class="section">
-        <h2>Programme</h2>
-        <p>Les détails du programme sont ici. Présentez les principaux objectifs et initiatives proposés pour faire face aux problèmes auxquels le pays est confronté.</p>
-        <a href="#join" class="btn">Rejoindre le Mouvement</a>
+        <div class="content-wrapper">
+            <h2>Programme</h2>
+            <p>Les détails du programme sont ici...</p>
+            <a href="#join" class="btn">Rejoindre le Mouvement</a>
+        </div>
     </section>
 
+    <div class="section-separator"></div>
+
     <section id="join" class="section">
-        <h2>Rejoignez-nous</h2>
-        <p>Rejoignez LERK! et participez à cette grande aventure pour redonner le pouvoir au peuple et la grandeur à notre nation.</p>
-        <form action="mailto:example@example.com" method="get" enctype="text/plain">
-            <label for="name">Nom:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="surname">Prénom:</label><br>
-            <input type="text" id="surname" name="surname" required><br><br>
-            <label for="email">Adresse Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="phone">Numéro de Téléphone:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
-            <input type="submit" value="Envoyer">
-        </form>
-        <div class="support-buttons">
-            <a href="#donate" class="btn">Faire un don</a>
+        <div class="content-wrapper">
+            <h2>Rejoignez-nous</h2>
+            <p>Rejoignez LERK! et participez à cette grande aventure...</p>
+            <form action="mailto:example@example.com" method="get" enctype="text/plain">
+                <label for="name">Nom:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="surname">Prénom:</label><br>
+                <input type="text" id="surname" name="surname" required><br><br>
+                <label for="email">Adresse Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Numéro de Téléphone:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <input type="submit" value="Envoyer">
+            </form>
+            <div class="support-buttons">
+                <a href="#donate" class="btn">Faire un don</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="team" class="section">
+        <div class="content-wrapper">
+            <h2>Notre Équipe</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 1" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <p>Nom de membre 1</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 2" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <p>Nom de membre 2</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 3" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <p>Nom de membre 3</p>
+                </div>
+            </div>
         </div>
     </section>
 
