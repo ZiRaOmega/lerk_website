@@ -86,7 +86,42 @@ nav ul li a:hover {
     border-radius: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth animation */
 }
+.eagle-image img {
+    max-width: 100%;
+}
 
+.section-links {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    background-color: rgba(74, 9, 104, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.section-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-links ul li {
+    margin: 5px 0;
+    padding: 5px
+}
+
+.section-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border: var(--secondary-color) 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.section-links ul li a:hover {
+    color: #d4b5f7;
+}
 .section:hover {
     transform: translateY(-10px); /* Lift the section slightly */
     background-color: var(--hover-bg-color); /* Change background color on hover */
@@ -112,9 +147,15 @@ nav ul li a:hover {
 
 .hero-text {
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     max-width: 80%;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    text-align: center;
+    z-index: 10;
+    font-size: small;
 }
 .hero-text h2{
     background-color: rgba(211, 211, 211,0.3);
@@ -122,6 +163,7 @@ nav ul li a:hover {
     border-radius: 10px;
     padding: 10px;
     text-shadow: lightslategray 1px 1px 1px;
+    font-size: small;
 }
 
 .content-wrapper {
@@ -129,6 +171,13 @@ nav ul li a:hover {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 20px;
 }
 
