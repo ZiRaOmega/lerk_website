@@ -1,0 +1,7 @@
+[build]
+  publish = "nico_website"  # Directory to publish
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
