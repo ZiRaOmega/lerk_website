@@ -1,5 +1,5 @@
 [build]
-  publish = "nico_website"  # Directory to publish
+  publish = "."  # Directory to publish
 
 [[redirects]]
   from = "/*"
