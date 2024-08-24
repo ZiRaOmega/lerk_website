@@ -1,17 +1,11 @@
 [build]
-  publish = "."  # Directory to publish
+  publish = "."  # Publish the root directory where index.html resides
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  
+
 [plugins]
   [[plugins]]
-    package = "@netlify/plugin-nextjs"
-
-[[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200
-  force = true
+    package = "@netlify/netlify-cms-widget-editor"
