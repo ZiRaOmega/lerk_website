@@ -28,4 +28,4 @@ collections:
         name: "style"
         file: "/style/styles.css"
         fields:
-          - { label: "CSS Content", name: "body", widget: "code", default_language: "css" }
+          - { label: "CSS Content", name: "body", widget: "markdown", default_language: "css" }
