@@ -5,3 +5,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[dev]
+command = "npx http-server ."  # Or another command appropriate for your setup
