@@ -21,3 +21,8 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Styles"
+        name: "style"
+        file: "styles.css"
+        fields:
+          - { label: "CSS Content", name: "body", widget: "code", default_language: "css" }
