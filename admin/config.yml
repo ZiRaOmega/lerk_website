@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "index.html"
+        file: "style/styles.css"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown", default_language: "html" }
