@@ -11,7 +11,7 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "style/styles.css"
+        file: "index.html"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown", default_language: "html" }
@@ -21,11 +21,12 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown", default_language: "html" }
-  - name: "style"
+
+  - name: "styles"
     label: "Styles"
     files:
-      - label: "Styles"
-        name: "style"
-        file: "/style/styles.css"
+      - label: "Main Stylesheet"
+        name: "main_style"
+        file: "style/styles.css"
         fields:
-          - { label: "CSS Content", name: "body", widget: "markdown", default_language: "css" }
+          - { label: "CSS Content", name: "body", widget: "code", default_language: "css" }
