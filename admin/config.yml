@@ -14,13 +14,13 @@ collections:
         file: "index.html"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Body", name: "body", widget: "markdown", default_language: "html" }
       - label: "Tutorial"
         name: "tutorial"
         file: "tuto.html"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Body", name: "body", widget: "markdown", default_language: "html" }
       - label: "Styles"
         name: "style"
         file: "styles.css"
