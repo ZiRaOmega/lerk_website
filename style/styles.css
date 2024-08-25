@@ -27,7 +27,6 @@ header {
     height: var(--header-height);
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 0 20px;
     position: fixed;
     width: 100%;
@@ -46,6 +45,12 @@ header {
     height: 50px;
 }
 
+.header-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    flex-grow: 1;
+}
 nav ul {
     list-style: none;
     display: flex;
@@ -86,14 +91,207 @@ nav ul li a:hover {
     border-radius: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth animation */
 }
-.eagle-image img {
-    max-width: 100%;
+.eagle-image {
+    height: 100%;
+    background: url('../img/banner.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    right: 5px;
+    top: 80px;
+    overflow-x: hidden;
+}
+.payment-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
 }
 
+.payment-option {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.payment-option h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.payment-option p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.payment-option .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-option .btn:hover {
+    background-color: #7a33a7;
+}
+
+.payment-option:hover {
+    transform: translateY(-5px);
+    background-color: var(--hover-bg-color);
+}
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.text-container {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.eagle-container {
+    text-align: right;
+    margin-top: 40px;
+    position: relative;
+}
+
+.eagle-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.eagle-text {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.additional-photos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.additional-photos .photo {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.additional-photos img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.executive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.executive-member {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.executive-member img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.executive-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.executive-member p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.executive-member:hover {
+    transform: translateY(-5px);
+    background-color: var(--hover-bg-color);
+}
+.top-right-buttons {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border: var(--primary-color) 3px solid;
+    border-radius: 10px;
+    padding: 10px; */
+}
+
+.top-right-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header-bg-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.top-right-buttons .btn:hover {
+    background-color: #7a33a7;
+    transform: scale(1.05);
+}
+
+
+
+#home {
+    position: relative;
+    height: 100vh;
+    background-color: #4A0968;
+}
 .section-links {
     position: absolute;
-    top: 250px;
-    right: 40px;
+    bottom: 120px;
+    right: 20px;
     background-color: rgba(74, 9, 104, 0.9);
     padding: 10px 20px;
     border-radius: 10px;
@@ -107,7 +305,6 @@ nav ul li a:hover {
 
 .section-links ul li {
     margin: 5px 0;
-    padding: 5px
 }
 
 .section-links ul li a {
@@ -150,20 +347,12 @@ nav ul li a:hover {
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
     border-radius: 10px;
-    max-width: 80%;
+    max-width: 50%;
     position: absolute;
     top: 80px;
     right: 20px;
     text-align: center;
     z-index: 10;
-    font-size: small;
-}
-.hero-text h2{
-    background-color: rgba(211, 211, 211,0.3);
-    color: rgba(74, 9, 104,1) !important;
-    border-radius: 10px;
-    padding: 10px;
-    text-shadow: lightslategray 1px 1px 1px;
     font-size: small;
 }
 
@@ -202,7 +391,9 @@ nav ul li a:hover {
 .image-container img:hover {
     transform: scale(1.05);
 }
-
+.floating-btn{
+    font-size: smaller;
+}
 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -230,7 +421,7 @@ p {
 .contact-us {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 1000;
 }
 
@@ -251,6 +442,7 @@ p {
     background-color: #7a33a7;
     transform: scale(1.05);
 }
+
 @media (max-width: 768px) {
     .burger-menu {
         display: flex;
@@ -283,7 +475,7 @@ p {
 
     .hero-text {
         padding: 10px;
-        font-size: 1.2rem;
+       
     }
 
     h2 {
