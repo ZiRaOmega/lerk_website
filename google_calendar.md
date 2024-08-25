@@ -1,0 +1,2 @@
+Go to https://calendar.google.com/calendar/u/0/r
+Click on the 3 dots next to named agendas on the bottom left and select settings and share. Click on make the agenda public and click on get the share link, select what is after cid in the url it's the agenda id
