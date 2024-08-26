@@ -487,7 +487,7 @@ p {
 
     .hero-text {
         padding: 10px;
-       
+        max-width: 100%; /* Ensure the hero text doesn't overflow */
     }
 
     h2 {
@@ -513,5 +513,13 @@ p {
     .team-member {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    .section-links {
+        bottom: 10px; /* Adjust the section links for smaller screens */
+    }
+
+    .hero-text {
+        font-size: smaller; /* Further adjust text size for very small screens */
     }
 }
