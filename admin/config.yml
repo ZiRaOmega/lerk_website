@@ -27,8 +27,8 @@ collections:
   - name: "styless"
     label: "Styless"
     files:
-      - label: "Stylesheet"
-        name: "style"
+      - label: "Stylesheeet"
+        name: "stylee"
         file: "styles.css"
         fields:
           - { label: "CSS Content", name: "body", widget: "code", default_language: "css" }
