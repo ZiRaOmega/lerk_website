@@ -468,19 +468,123 @@ p {
     background-color: #7a33a7;
     transform: scale(1.05);
 }
-.popup-form {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  width: 300px;
-  border-radius: 10px;
+/* Popup Background */
+#popupBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
+/* Popup Form Container */
+#popupForm {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+/* Slide in Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Form Fields */
+#popupForm input[type="text"], 
+#popupForm input[type="email"], 
+#popupForm input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#popupForm input[type="text"]:focus, 
+#popupForm input[type="email"]:focus, 
+#popupForm input[type="tel"]:focus {
+    border-color: #4A0968; /* Highlight on focus */
+    outline: none;
+}
+
+/* Buttons */
+#popupForm button {
+    background-color: #4A0968;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#popupForm button:hover {
+    background-color: #7a33a7;
+}
+
+/* Close Button */
+#popupForm .closeBtn {
+    background-color: #ccc;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#popupForm .closeBtn:hover {
+    background-color: #999;
+}
+
+/* Close Button Position */
+#popupForm .closePopup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    #popupForm {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #popupForm button {
+        font-size: 0.9rem;
+    }
+}
 #popupForm h3 {
   text-align: center;
 }
