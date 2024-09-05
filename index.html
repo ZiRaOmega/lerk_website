@@ -1,6 +1,3 @@
----
-title: LERK
----
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -267,7 +264,7 @@ nav ul li a:hover {
 }
 .top-right-buttons {
     position: fixed;
-    top: 90px;
+    top: 100px;
     right: 20px;
     z-index: 1000;
     display: flex;
@@ -281,7 +278,7 @@ nav ul li a:hover {
 .top-right-buttons .btn {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: space-evenly; */
     background-color: var(--header-bg-color);
     color: var(--secondary-color);
     padding: 10px 20px;
@@ -359,9 +356,11 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    background: url('../img/banner.jpg') no-repeat center center;
-    background-size: cover;
-    display: flex;
+   /*  background: url('../img/banner.jpg') no-repeat center center;
+    */ 
+    /* background-size: cover;
+     */
+     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -591,15 +590,23 @@ p {
     }
     .top-right-buttons{
         flex-direction: row;
-        top:50px;
+        top:60px;
         right: 0;
         padding: 0;
         margin: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
         
     }
     .top-right-buttons a{
-        font-size: smaller;
-        width: 30%;
+        font-size: small;
+        width: 175px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
     }
     nav ul {
         display: none;
