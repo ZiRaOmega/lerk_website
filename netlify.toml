@@ -1,6 +1,5 @@
 [build]
   publish = "."  # The directory to publish, which is the current directory where your index.html is located
-  publish = "style/"
 
 [[redirects]]
   from = "/"
