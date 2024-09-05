@@ -468,7 +468,26 @@ p {
     background-color: #7a33a7;
     transform: scale(1.05);
 }
+.popup-form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 300px;
+  border-radius: 10px;
+}
 
+#popupForm h3 {
+  text-align: center;
+}
+
+.popup-form button[type="button"] {
+  margin-top: 10px;
+}
 @media (max-width: 768px) {
     .burger-menu {
         display: flex;
@@ -821,9 +840,31 @@ p {
 <footer>
     <p>© 2024 LERK! Tous droits réservés.</p>
 </footer>
+<!-- Contact Us Button -->
 <div class="contact-us">
-    <a href="mailto:renovateur.lerk@gmail.com" class="contact-us-button">Contact Us</a>
-</div>    
+  <button class="contact-us-button" id="contactUsBtn">Contact Us</button>
+</div>
+
+<!-- Popup Form (hidden initially) -->
+<div id="popupForm" class="popup-form" style="display: none;">
+  <form id="popupContactForm">
+    <h3>Contact Us</h3>
+    <label for="popupName">Nom:</label><br>
+    <input type="text" id="popupName" name="name" required><br><br>
+
+    <label for="popupSurname">Prénom:</label><br>
+    <input type="text" id="popupSurname" name="surname" required><br><br>
+
+    <label for="popupEmail">Adresse Email:</label><br>
+    <input type="email" id="popupEmail" name="email" required><br><br>
+
+    <label for="popupPhone">Numéro de Téléphone:</label><br>
+    <input type="tel" id="popupPhone" name="phone" required><br><br>
+
+    <button type="submit">Envoyer</button>
+    <button type="button" id="closePopupBtn">Fermer</button>
+  </form>
+</div>
 ```
 
 </body>
@@ -839,6 +880,32 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var mailtoLink = `mailto:renovateur.lerk@gmail.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
     
     window.location.href = mailtoLink;
+});
+//Contact us button/form
+// Show popup form on button click
+document.getElementById('contactUsBtn').addEventListener('click', function() {
+  document.getElementById('popupForm').style.display = 'block';
+});
+
+// Close popup form
+document.getElementById('closePopupBtn').addEventListener('click', function() {
+  document.getElementById('popupForm').style.display = 'none';
+});
+
+// Handle popup form submission
+document.getElementById('popupContactForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  var name = document.getElementById('popupName').value;
+  var surname = document.getElementById('popupSurname').value;
+  var email = document.getElementById('popupEmail').value;
+  var phone = document.getElementById('popupPhone').value;
+
+  var mailtoLink = `mailto:emailaddress@example.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
+  
+  window.location.href = mailtoLink;
+  
+  document.getElementById('popupForm').style.display = 'none';
 });
 </script>
 </html>
