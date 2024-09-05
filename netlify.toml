@@ -6,5 +6,10 @@
   to = "/index.html"
   status = 200
 
+[[headers]]
+  for = "/*"
+[headers.values]
+  Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline'"
+
 [dev]
 command = "npx http-server ."  # Or another command appropriate for your setup
