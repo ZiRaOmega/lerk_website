@@ -16,21 +16,4 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Content", name: "body", widget: "markdown", default_language: "html" }
 
-  - name: "styles"
-    label: "Styles"
-    files:
-      - label: "Stylesheet"
-        name: "style"
-        file: "style/styles.css"
-        fields:
-          - { label: "CSS Content", name: "body", widget: "code", default_language: "css" }
-  - name: "styless"
-    label: "Styless"
-    files:
-      - label: "Stylesheeet"
-        name: "stylee"
-        file: "style/styles.html"
-        fields:
-          - { label: "CSS Content", name: "body", widget: "code", default_language: "html" }
-
 publish_mode: editorial_workflow
