@@ -884,7 +884,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 //Contact us button/form
 // Show popup form on button click
 document.getElementById('contactUsBtn').addEventListener('click', function() {
-  document.getElementById('popupForm').style.display = 'block';
+  document.getElementById('popupForm').style.display = document.getElementById('popupForm').style.display=='block' ? 'none' : 'block'
 });
 
 // Close popup form
