@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: bis
+  branch: main
 
 media_folder: "img"
 public_folder: "/img"
@@ -9,24 +9,20 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - label: "Home"
+      - label: "Home Page"
         name: "home"
         file: "index.html"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown", default_language: "html" }
-      - label: "Tutorial"
-        name: "tutorial"
-        file: "tuto.html"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown", default_language: "html" }
+          - { label: "Content", name: "body", widget: "markdown", default_language: "html" }
 
   - name: "styles"
     label: "Styles"
     files:
-      - label: "Main Stylesheet"
-        name: "main_style"
+      - label: "Stylesheet"
+        name: "style"
         file: "style/styles.css"
         fields:
           - { label: "CSS Content", name: "body", widget: "code", default_language: "css" }
+
+publish_mode: editorial_workflow
