@@ -2,7 +2,7 @@
   publish = "."  # The directory to publish, which is the current directory where your index.html is located
 
 [[redirects]]
-  from = "/*"
+  from = "/"
   to = "/index.html"
   status = 200
 
