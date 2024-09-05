@@ -476,7 +476,7 @@ p {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    display: none; /* Initially hidden */
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -492,24 +492,11 @@ p {
     width: 90%;
     text-align: center;
     position: relative;
-    animation: slideIn 0.3s ease-in-out;
-}
-
-/* Slide in Animation */
-@keyframes slideIn {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 /* Form Fields */
-#popupForm input[type="text"], 
-#popupForm input[type="email"], 
+#popupForm input[type="text"],
+#popupForm input[type="email"],
 #popupForm input[type="tel"] {
     width: 100%;
     padding: 12px;
@@ -520,14 +507,13 @@ p {
     transition: border-color 0.3s ease;
 }
 
-#popupForm input[type="text"]:focus, 
-#popupForm input[type="email"]:focus, 
+#popupForm input[type="text"]:focus,
+#popupForm input[type="email"]:focus,
 #popupForm input[type="tel"]:focus {
-    border-color: #4A0968; /* Highlight on focus */
+    border-color: #4A0968;
     outline: none;
 }
 
-/* Buttons */
 #popupForm button {
     background-color: #4A0968;
     color: white;
@@ -545,7 +531,6 @@ p {
     background-color: #7a33a7;
 }
 
-/* Close Button */
 #popupForm .closeBtn {
     background-color: #ccc;
     color: black;
@@ -561,7 +546,6 @@ p {
 #popupForm .closeBtn:hover {
     background-color: #999;
 }
-
 /* Close Button Position */
 #popupForm .closePopup {
     position: absolute;
@@ -988,7 +972,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 //Contact us button/form
 // Show popup form on button click
 document.getElementById('contactUsBtn').addEventListener('click', function() {
-  document.getElementById('popupForm').style.display = document.getElementById('popupForm').style.display=='block' ? 'none' : 'block'
+  document.getElementById('popupForm').style.display = document.getElementById('popupForm').style.display === 'block' ? 'none' : 'block';
 });
 
 // Close popup form
@@ -999,16 +983,16 @@ document.getElementById('closePopupBtn').addEventListener('click', function() {
 // Handle popup form submission
 document.getElementById('popupContactForm').addEventListener('submit', function(event) {
   event.preventDefault();
-  
+
   var name = document.getElementById('popupName').value;
   var surname = document.getElementById('popupSurname').value;
   var email = document.getElementById('popupEmail').value;
   var phone = document.getElementById('popupPhone').value;
 
-  var mailtoLink = `mailto:emailaddress@example.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
-  
+  var mailtoLink = `mailto:renovateur.lerk@gmail.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
+
   window.location.href = mailtoLink;
-  
+
   document.getElementById('popupForm').style.display = 'none';
 });
 </script>
