@@ -6,9 +6,3 @@
   to = "/index.html"
   status = 200
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self' https://*.netlify.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://*.netlify.com https://unpkg.com; frame-ancestors 'self';"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
