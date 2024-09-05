@@ -491,7 +491,12 @@ p {
     max-width: 400px;
     width: 90%;
     text-align: center;
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup */
+    z-index: 1001;
+    animation: slideIn 0.3s ease-in-out;
 }
 
 /* Form Fields */
