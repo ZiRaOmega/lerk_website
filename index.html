@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,700 +9,795 @@
     <link rel="icon" href="img/logo.jpg" type="image/jpeg">
     <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<style>
-:root {
-    --primary-color: #4A0968;
-    --secondary-color: white;
-    --header-height: 70px;
-    --header-bg-color: #4A0968;
-    --section-padding: 60px 20px;
-    --separation-color: var(--primary-color);
-    --hover-bg-color: #e6e6e6; /* Background color on hover */
-}
+    <style>
+        :root {
+            --primary-color: #4A0968;
+            --secondary-color: white;
+            --header-height: clamp(40px, );
+            --header-bg-color: #4A0968;
+            --section-padding: 60px 20px;
+            --separation-color: var(--primary-color);
+            --hover-bg-color: #e6e6e6;
+            /* Background color on hover */
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    background-color: #f7f7f7;
-    color: #333;
-    width: 100vw;
-}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            background-color: #f7f7f7;
+            color: #333;
+            width: 100vw;
+        }
 
-header {
-    background-color: var(--header-bg-color);
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    position: fixed;
-    width: 100vw;
-    top: 0;
-    z-index: 1000;
-}
+        header {
+            background-color: var(--header-bg-color);
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: fixed;
+            width: 100vw;
+            top: 0;
+            z-index: 1000;
+        }
 
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-}
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100vw;
+        }
 
-.logo img {
-    height: 50px;
-}
+        .logo img {
+            height: 50px;
+        }
 
-.header-title {
-    text-align: center;
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    flex-grow: 1;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        .header-title {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            flex-grow: 1;
+        }
 
-nav ul li a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
+        nav ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.burger-menu {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
 
-.burger-menu .line {
-    width: 25px;
-    height: 2px;
-    background-color: var(--secondary-color);
-}
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
 
-.section {
-    padding: var(--section-padding);
-    margin: var(--header-height) auto;
-    max-width: 90%;
-    background-color: #f7f7f7;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth animation */
-}
-.eagle-image {
-    height: 100vh;
-    width: 100%;
-    background: url('../img/banner.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
+        .burger-menu .line {
+            width: 25px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
 
-    overflow-x: hidden;
-}
-.payment-options {
-    
-    margin-top: 40px;
-}
+        .section {
+            padding: var(--section-padding);
+            margin: var(--header-height) auto;
+            max-width: 90%;
+            background-color: #f7f7f7;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            /* Add transition for smooth animation */
+        }
 
-.payment-option {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    flex: 1;
-    margin: 0 10px;
-}
 
-.payment-option h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
+        .eagle-image {
+            position: relative;
+            top: 60px;
+            height: 100vh;
+            width: 100%;
+            background:
+                url('../img/banner.jpg') no-repeat center top,
+                /* Center the eagle image */
+                linear-gradient(to bottom,
+                    rgba(75, 8, 104, 1) 0%,
+                    /* Purple */
+                    rgba(75, 8, 104, 1) 43.7%,
+                    /* Ensure purple matches the eagle background */
+                    rgba(254, 255, 254, 1) 30%,
+                    /* White starts matching eagle section */
+                    rgba(254, 255, 254, 1) 68.35%,
+                    /* White continues */
+                    rgba(11, 11, 11, 1) 60%,
+                    /* Black starts at 60% */
+                    rgba(11, 11, 11, 1) 100%
+                    /* Black continues to the bottom */
+                );
+            background-size: contain;
+            /* Ensure full image is shown without cutting */
+            background-position: center top;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-.payment-option p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
 
-.payment-option .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
 
-.payment-option .btn:hover {
-    background-color: #7a33a7;
-}
 
-.payment-option:hover {
-    transform: translateY(-5px);
-    background-color: var(--hover-bg-color);
-}
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
+        .payment-options {
 
-.text-container {
-    flex: 1;
-    padding-right: 20px;
-}
+            margin-top: 40px;
+        }
 
-.image-container {
-    flex: 1;
-    text-align: center;
-}
+        .payment-option {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            flex: 1;
+            margin: 0 10px;
+        }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+        .payment-option h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
 
-.eagle-container {
-    text-align: right;
-    margin-top: 40px;
-    position: relative;
-}
+        .payment-option p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
 
-.eagle-container img {
-    max-width: 100%;
-    height: auto;
-}
+        .payment-option .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.eagle-text {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-}
+        .payment-option .btn:hover {
+            background-color: #7a33a7;
+        }
 
-.additional-photos {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-}
+        .payment-option:hover {
+            transform: translateY(-5px);
+            background-color: var(--hover-bg-color);
+        }
 
-.additional-photos .photo {
-    flex: 1;
-    margin: 0 10px;
-    text-align: center;
-}
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
 
-.additional-photos img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-.executive-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    align-items: start;
-    margin-top: 20px;
-}
+        .text-container {
+            flex: 1;
+            padding-right: 20px;
+        }
 
-.executive-member {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
 
-.executive-member img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-.executive-member h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
+        .eagle-container {
+            text-align: right;
+            margin-top: 40px;
+            position: relative;
+        }
 
-.executive-member p {
-    font-size: 1rem;
-    color: #333;
-}
+        .eagle-container img {
+            max-width: 100%;
+            height: auto;
+        }
 
-.executive-member:hover {
-    transform: translateY(-5px);
-    background-color: var(--hover-bg-color);
-}
-.top-right-buttons {
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* border: var(--primary-color) 3px solid;
+        .eagle-text {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .additional-photos {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .additional-photos .photo {
+            flex: 1;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        .additional-photos img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .executive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-items: start;
+            margin-top: 20px;
+        }
+
+        .executive-member {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .executive-member img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .executive-member h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .executive-member p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .executive-member:hover {
+            transform: translateY(-5px);
+            background-color: var(--hover-bg-color);
+        }
+
+        .top-right-buttons {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* border: var(--primary-color) 3px solid;
     border-radius: 10px;
     padding: 10px; */
-}
+        }
 
-.top-right-buttons .btn {
-    display: flex;
-    align-items: center;
-    /* justify-content: space-evenly; */
-    background-color: var(--header-bg-color);
-    color: var(--secondary-color);
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+        .top-right-buttons .btn {
+            display: flex;
+            align-items: center;
+            /* justify-content: space-evenly; */
+            background-color: var(--header-bg-color);
+            color: var(--secondary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.top-right-buttons .btn:hover {
-    background-color: #7a33a7;
-    transform: scale(1.05);
-}
+        .top-right-buttons .btn:hover {
+            background-color: #7a33a7;
+            transform: scale(1.05);
+        }
 
 
 
-#home {
-    position: relative;
-    height: 100vh;
-    background-color: #4A0968;
-}
-.section-links {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-    background-color: rgba(74, 9, 104, 0.9);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
+        #home {
+            position: relative;
+            height: 100vh;
+            background-color: #4A0968;
+        }
 
-.section-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        .section-links {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            background-color: rgba(74, 9, 104, 0.9);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
 
-.section-links ul li {
-    margin: 17px 0;
-}
+        .section-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.section-links ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    border: var(--secondary-color) 1px solid;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #4A0968;
-}
+        .section-links ul li {
+            margin: 17px 0;
+        }
 
-.section-links ul li a:hover {
-    color: #d4b5f7;
-}
-.section:hover {
-    transform: translateY(-10px); /* Lift the section slightly */
-    background-color: var(--hover-bg-color); /* Change background color on hover */
-}
+        .section-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border: var(--secondary-color) 1px solid;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #4A0968;
+        }
 
-.section-separator {
-    height: 35px;
-    background-color: var(--separation-color);
-    width: 100%;
-}
-#evenements .calendar-container {
-    text-align: center;
-    margin: 20px 0;
-}
+        .section-links ul li a:hover {
+            color: #d4b5f7;
+        }
 
-#evenements iframe {
-    width: 100%;
-    max-width: 800px;
-    height: 600px;
-    border: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+        .section:hover {
+            transform: translateY(-10px);
+            /* Lift the section slightly */
+            background-color: var(--hover-bg-color);
+            /* Change background color on hover */
+        }
 
-.hero-content {
-   /*  background: url('../img/banner.jpg') no-repeat center center;
-    */ 
-    /* background-size: cover;
+        .section-separator {
+            height: 35px;
+            background-color: var(--separation-color);
+            width: 100%;
+        }
+
+        #evenements .calendar-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #evenements iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            border: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content {
+            /*  background: url('../img/banner.jpg') no-repeat center center;
+    */
+            /* background-size: cover;
      */
-     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: var(--secondary-color);
-    position: relative;
-    text-align: center;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: var(--secondary-color);
+            position: relative;
+            text-align: center;
+        }
 
-.hero-text {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 50%;
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    text-align: center;
-    z-index: 10;
-    font-size: small;
-}
+        .hero-text {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 50%;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            text-align: center;
+            z-index: 10;
+            font-size: small;
+        }
 
-.content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-.flex-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
 
-.text-container {
-    flex: 1;
-}
+        .text-container {
+            flex: 1;
+        }
 
-.image-container {
-    flex: 1;
-    text-align: right;
-}
+        .image-container {
+            flex: 1;
+            text-align: right;
+        }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
 
-.image-container img:hover {
-    transform: scale(1.05);
-}
-.floating-btn{
-    font-size: smaller;
-}
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
 
-p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
+        .floating-btn {
+            font-size: smaller;
+        }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
 
-.btn:hover {
-    background-color: #7a33a7;
-}
-.contact-us {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1000;
-}
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
 
-.contact-us-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--header-bg-color);
-    color: var(--secondary-color);
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 25px 15px 45px;
-}
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.contact-us-button:hover {
-    background-color: #7a33a7;
-    transform: scale(1.05);
-}
-/* Popup Background */
-#popupBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
+        .btn:hover {
+            background-color: #7a33a7;
+        }
 
-/* Popup Form Container */
-#popupForm {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the popup */
-    z-index: 1001;
-    animation: slideIn 0.3s ease-in-out;
-}
+        .contact-us {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
 
-/* Form Fields */
-#popupForm input[type="text"],
-#popupForm input[type="email"],
-#popupForm input[type="tel"] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
+        .contact-us-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--header-bg-color);
+            color: var(--secondary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 25px 15px 45px;
+        }
 
-#popupForm input[type="text"]:focus,
-#popupForm input[type="email"]:focus,
-#popupForm input[type="tel"]:focus {
-    border-color: #4A0968;
-    outline: none;
-}
+        .contact-us-button:hover {
+            background-color: #7a33a7;
+            transform: scale(1.05);
+        }
 
-#popupForm button {
-    background-color: #4A0968;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
+        /* Popup Background */
+        #popupBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Dark overlay */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
 
-#popupForm button:hover {
-    background-color: #7a33a7;
-}
+        /* Popup Form Container */
+        #popupForm {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Center the popup */
+            z-index: 1001;
+            animation: slideIn 0.3s ease-in-out;
+        }
 
-#popupForm .closeBtn {
-    background-color: #ccc;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
+        /* Form Fields */
+        #popupForm input[type="text"],
+        #popupForm input[type="email"],
+        #popupForm input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
 
-#popupForm .closeBtn:hover {
-    background-color: #999;
-}
-/* Close Button Position */
-#popupForm .closePopup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    color: #333;
-}
+        #popupForm input[type="text"]:focus,
+        #popupForm input[type="email"]:focus,
+        #popupForm input[type="tel"]:focus {
+            border-color: #4A0968;
+            outline: none;
+        }
 
-/* Responsive Adjustments */
-@media only screen and (max-width: 768px) {
-    #popupForm {
-        width: 90%;
-        padding: 20px;
-    }
+        #popupForm button {
+            background-color: #4A0968;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
 
-    #popupForm button {
-        font-size: 0.9rem;
-    }
-}
-#popupForm h3 {
-  text-align: center;
-}
+        #popupForm button:hover {
+            background-color: #7a33a7;
+        }
 
-.popup-form button[type="button"] {
-  margin-top: 10px;
-}
-@media (max-width: 1400px) {
-    .eagle-image {
-        background-size: contain; /* Fits within the screen on smaller devices */
-    }
-}
-@media (max-width: 768px) {
-    
-    .hero-content {
-        background-size: contain;
-    }
-    .top-right-buttons{
-        flex-direction: column;
-        top:80px;
-        right: 0;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        
-        
-    }
-    .top-right-buttons a{
-        font-size: small;
-        width: 175px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-    }
-    .section-links {
-        bottom: 10px;
-        right: 10px;
-        padding: 8px 15px;
-        width: 30vw; /* Adjust width for mobile */
-    }
+        #popupForm .closeBtn {
+            background-color: #ccc;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
 
-    .section-links ul {
-        flex-direction: column;
-    }
+        #popupForm .closeBtn:hover {
+            background-color: #999;
+        }
 
-    .section-links ul li a {
-        font-size: 2vw;
-        padding: 8px 15px;
-    }
-    nav ul {
-        display: none;
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        width: 100%;
-        background-color: var(--header-bg-color);
-        flex-direction: column;
-    }
+        /* Close Button Position */
+        #popupForm .closePopup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+        }
 
-    nav ul li {
-        text-align: center;
-        margin: 0;
-        padding: 10px 0;
-    }
+        video {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: unset;
+            width: 100%;
+            /* Ensures it stays in the background */
+        }
+        #video-container{
+            height: 100%;
+        }
 
-    nav ul li a {
-        width: 100%;
-        display: block;
-    }
+        /* Responsive Adjustments */
+        @media only screen and (max-width: 768px) {
+            #popupForm {
+                width: 90%;
+                padding: 20px;
+            }
 
-    nav ul.active {
-        display: flex;
-    }
+            #popupForm button {
+                font-size: 0.9rem;
+            }
+        }
 
-    .hero-text {
-        padding: 10px;
-        max-width: 100%; /* Ensure the hero text doesn't overflow */
-    }
+        #popupForm h3 {
+            text-align: center;
+        }
 
-    h2 {
-        font-size: 1.5rem;
-    }
+        .popup-form button[type="button"] {
+            margin-top: 10px;
+        }
 
-    p {
-        font-size: 1rem;
-    }
 
-    .btn {
-        padding: 8px 16px;
-        font-size: 1rem;
-    }
+        @media (max-width: 1500px) {
+            .eagle-image {
+                background:
+                    url('../img/banner.jpg') no-repeat center center,
+                    linear-gradient(to bottom, var(--primary-color) 10%, var(--primary-color) 50%, rgba(11, 11, 11, 1) 60%, rgba(11, 11, 11, 1));
 
-    .team-member {
-        flex: 1 1 calc(50% - 20px);
-        max-width: calc(50% - 20px);
-    }
-    .eagle-image {
-        background-size: contain; /* Fits within the screen on smaller devices */
-    }
-    
-}
+                /* Fits within the screen on smaller devices */
+                background-size: contain;
+            }
+        }
 
-@media (max-width: 480px) {
-    .team-member {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
+        @media (max-width: 768px) {
 
-    .section-links {
-        bottom: 10px; /* Adjust the section links for smaller screens */
-    }
+            .hero-content {
+                background-size: contain;
+            }
 
-    .hero-text {
-        font-size: smaller; /* Further adjust text size for very small screens */
-    }
-}
-</style>
+            .top-right-buttons {
+                flex-direction: column;
+                top: 80px;
+                right: 0;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+
+
+            }
+
+            .top-right-buttons a {
+                font-size: small;
+                width: 175px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+            }
+
+            .section-links {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                width: 30vw;
+                /* Adjust width for mobile */
+            }
+
+            .section-links ul {
+                flex-direction: column;
+            }
+
+            .section-links ul li a {
+                font-size: 2vw;
+                padding: 8px 15px;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background-color: var(--header-bg-color);
+                flex-direction: column;
+            }
+
+            nav ul li {
+                text-align: center;
+                margin: 0;
+                padding: 10px 0;
+            }
+
+            nav ul li a {
+                width: 100%;
+                display: block;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero-text {
+                padding: 10px;
+                max-width: 100%;
+                /* Ensure the hero text doesn't overflow */
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 1rem;
+            }
+
+            .team-member {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+
+            /* Ensure eagle image is fully visible and scales correctly */
+            .eagle-image {
+                min-height: 100vh;
+                /* Still covers the viewport */
+                background-size: contain;
+                /* Maintain aspect ratio, no cropping */
+                /* Keep the image aligned */
+                padding-top: 10px;
+                /* Optional: Adds space for better visibility */
+            }
+
+            .video-container {
+                height: calc(100vh - 60px);
+                /* Same logic, adjusted for mobile */
+            }
+
+            #myVideo {
+                object-fit: cover;
+                /* Maintain aspect ratio without stretching */
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .team-member {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .section-links {
+                bottom: 10px;
+                /* Adjust the section links for smaller screens */
+            }
+
+            .hero-text {
+                font-size: smaller;
+                /* Further adjust text size for very small screens */
+            }
+        }
+    </style>
 </head>
+
 <body>
-   
+
     <header>
         <div class="header-inner">
             <div class="logo">
-                <img src="img/logo.jpg" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <img src="img/logo.jpg" alt="Logo"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
             </div>
             <h1 class="header-title">LERK RENOVATEUR</h1>
         </div>
@@ -710,9 +806,15 @@ p {
         <a href="#join" class="btn">Rejoindre maintenant</a>
         <a href="#donate" class="btn">Faire un don</a>
     </div>
-    
+
     <section id="home">
+
         <div class="eagle-image">
+            <div id="video-container">
+                <video id="myVideo" autoplay >
+                    <source src="img/video_formatted.mp4" type="video/mp4">
+                </video>
+            </div>
             <div class="section-links">
                 <ul>
                     <li><a href="#renovateurs">Rénovateurs</a></li>
@@ -725,311 +827,358 @@ p {
         </div>
     </section>
 
-```
-<div class="section-separator"></div>
+    ```
+    <div class="section-separator"></div>
 
-<section id="movement" class="section">
-    <div class="content-wrapper flex-container">
-        <div class="text-container">
-            <h2>Notre Mouvement</h2>
-            <p>LERK est un parti politique qui a vu le jour en 2019, initié par M. Blanchard Teta Mwamba et ses cofondateurs, animés par un profond patriotisme, ayant tous en commun le désir de changement. Créé dans le but d'établir un pont entre la diaspora congolaise et les Congolais vivant en RDC, nous œuvrons politiquement en France, aux États-Unis, en Russie, en Belgique, en Allemagne, en Chine, au Canada et en RDC. Lisanga des Élites pour le Renouveau du Congo est un parti qui prône la social-démocratie. Nous luttons pour un État de droit afin d'instaurer une justice sociale.</p>
-        </div>
-        <div class="image-container">
-            <img src="img/suit.jpg" alt="Suit Image" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-        </div>
-    </div>
-</section>
-
-<div class="section-separator"></div>
-
-<section id="resources" class="section">
-    <div class="content-wrapper">
-        <h2>Ressources du Congo</h2>
-        <p>Depuis les années 60, la République Démocratique du Congo peine à s'inscrire parmi les pays émergents, bien que notre territoire soit extrêmement riche, tant au niveau des ressources naturelles de surface que souterraines. Cependant, le secteur politique reste fragile face aux enjeux qui prévalent.</p>
-        <div class="support-buttons">
-            <a href="#join" class="btn">Rejoindre le Mouvement</a>
-        </div>
-    </div>
-</section>
-
-<div class="section-separator"></div>
-
-<section id="vision" class="section">
-    <div class="content-wrapper">
-        <h2>Notre Vision</h2>
-        <p>Nous, LERK - Lisanga des Élites pour le Renouveau du Congo, croyons qu'il est possible de changer les choses et d'instaurer une bonne gouvernance, en faisant recours à nos us et coutumes, en remontant à la genèse de notre histoire pour avoir une vision plus claire en politique.</p>
-    </div>
-</section>
-
-<div class="section-separator"></div>
-
-<section id="renovateurs" class="section">
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-    <div class="content-wrapper">
-        <div class="main-content">
+    <section id="movement" class="section">
+        <div class="content-wrapper flex-container">
             <div class="text-container">
-                <h2>Président Rénovateur</h2>
-                <p>Présentation du président rénovateur. Texte détaillant le rôle et les responsabilités du président rénovateur...</p>
+                <h2>Notre Mouvement</h2>
+                <p>LERK est un parti politique qui a vu le jour en 2019, initié par M. Blanchard Teta Mwamba et ses
+                    cofondateurs, animés par un profond patriotisme, ayant tous en commun le désir de changement. Créé
+                    dans le but d'établir un pont entre la diaspora congolaise et les Congolais vivant en RDC, nous
+                    œuvrons politiquement en France, aux États-Unis, en Russie, en Belgique, en Allemagne, en Chine, au
+                    Canada et en RDC. Lisanga des Élites pour le Renouveau du Congo est un parti qui prône la
+                    social-démocratie. Nous luttons pour un État de droit afin d'instaurer une justice sociale.</p>
             </div>
             <div class="image-container">
-                <img src="img/H3.jpeg" alt="Président Rénovateur" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                <img src="img/suit.jpg" alt="Suit Image"
+                    onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
             </div>
         </div>
-        <div class="eagle-container">
-            <img src="img/eagle.jpg" alt="Eagle" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-            <div class="eagle-text">
-                <p>Texte des Rénovateurs</p>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="resources" class="section">
+        <div class="content-wrapper">
+            <h2>Ressources du Congo</h2>
+            <p>Depuis les années 60, la République Démocratique du Congo peine à s'inscrire parmi les pays émergents,
+                bien que notre territoire soit extrêmement riche, tant au niveau des ressources naturelles de surface
+                que souterraines. Cependant, le secteur politique reste fragile face aux enjeux qui prévalent.</p>
+            <div class="support-buttons">
+                <a href="#join" class="btn">Rejoindre le Mouvement</a>
             </div>
         </div>
-        <div class="additional-photos">
-            <div class="photo">
-                <img src="img/photo1.jpg" alt="Photo 1" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="vision" class="section">
+        <div class="content-wrapper">
+            <h2>Notre Vision</h2>
+            <p>Nous, LERK - Lisanga des Élites pour le Renouveau du Congo, croyons qu'il est possible de changer les
+                choses et d'instaurer une bonne gouvernance, en faisant recours à nos us et coutumes, en remontant à la
+                genèse de notre histoire pour avoir une vision plus claire en politique.</p>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <section id="renovateurs" class="section">
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div class="content-wrapper">
+            <div class="main-content">
+                <div class="text-container">
+                    <h2>Président Rénovateur</h2>
+                    <p>Présentation du président rénovateur. Texte détaillant le rôle et les responsabilités du
+                        président rénovateur...</p>
+                </div>
+                <div class="image-container">
+                    <img src="img/H3.jpeg" alt="Président Rénovateur"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                </div>
             </div>
-            <div class="photo">
-                <img src="img/photo2.jpg" alt="Photo 2" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+            <div class="eagle-container">
+                <img src="img/eagle.jpg" alt="Eagle"
+                    onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                <div class="eagle-text">
+                    <p>Texte des Rénovateurs</p>
+                </div>
             </div>
-            <div class="photo">
-                <img src="img/photo3.jpg" alt="Photo 3" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+            <div class="additional-photos">
+                <div class="photo">
+                    <img src="img/photo1.jpg" alt="Photo 1"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                </div>
+                <div class="photo">
+                    <img src="img/photo2.jpg" alt="Photo 2"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                </div>
+                <div class="photo">
+                    <img src="img/photo3.jpg" alt="Photo 3"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<div class="section-separator"></div>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<section id="president" class="section">
-    <div class="content-wrapper">
-        <h2>Président de LERK</h2>
-        <div class="image-container">
-            <img src="img/H1.jpeg" alt="Président Rénovateur" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-        </div>
-        <p>Je suis Blanchard Teta Mwamba, né à Kinshasa en RDC. J'ai débuté ma carrière politique en 2009, bien que mon parcours m'ait déjà tracé une destinée politique sans que je m'en rende compte. Sociologue, philosophe de formation, égyptologue, père d'une fille adorable.</p>
-        <p>Mon entrée en politique a été marquée par une scène horrible qui s'est déroulée à l'est de la RDC. Cela a suscité en moi une colère, une révolte qui fait de moi aujourd'hui un acteur politique œuvrant pour la justice sociale et la social-démocratie.</p>
-        <p>Mon équipe et moi nous engageons à offrir à la société congolaise une autre approche du Congo. Nous voulons lui faire savoir que tout est possible, il suffit d'avoir de bons gestionnaires et d'une bonne méthodologie en politique pour développer notre pays. Rejoignez-nous afin d'écrire cette histoire ensemble.</p>
-        <div class="support-buttons">
-            <a href="#join" class="btn">Rejoindre le Mouvement</a>
-            <a href="#donate" class="btn">Faire un don</a>
-        </div>
-    </div>
-</section>
-
-<div class="section-separator"></div>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<section id="join" class="section">
-    <div class="content-wrapper">
-        <h2>Rejoignez-nous</h2>
-        <p>Rejoignez LERK! et participez à cette grande aventure...</p>
-        <form id="contactForm">
-  <label for="name">Nom:</label><br>
-  <input type="text" id="name" name="name" required><br><br>
-
-  <label for="surname">Prénom:</label><br>
-  <input type="text" id="surname" name="surname" required><br><br>
-
-  <label for="email">Adresse Email:</label><br>
-  <input type="email" id="email" name="email" required><br><br>
-
-  <label for="phone">Numéro de Téléphone:</label><br>
-  <input type="tel" id="phone" name="phone" required><br><br>
-
-  <button type="submit">Envoyer</button>
-</form>
-    </div>
-</section>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<section id="adhesion" class="section">
-    <div class="content-wrapper">
-        <h2>Adhésion</h2>
-        <p>Rejoignez LERK et participez à cette grande aventure pour le renouveau du Congo. Sélectionnez une option de paiement pour devenir membre :</p>
-        <div class="payment-options">
-            <div class="payment-option">
-                <h3>Adhésion Standard</h3>
-                <p>20€ par mois</p>
-                <a href="#" class="btn">Payer avec Stripe</a>
-            </div>
-            <div class="payment-option">
-                <h3>Adhésion Premium</h3>
-                <p>50€ par mois</p>
-                <a href="#" class="btn">Payer avec Stripe</a>
-            </div>
-            <div class="payment-option">
-                <h3>Adhésion à vie</h3>
-                <p>500€ une fois</p>
-                <a href="#" class="btn">Payer avec Stripe</a>
-            </div>
-        </div>
-    </div>
-</section>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<section id="don" class="section">
-    <div class="content-wrapper">
-        <h2>Faire un Don</h2>
-        <div class="image-container">
-            <img src="img/donation-image.jpg" alt="Faire un don image" onerror="this.src='https://via.placeholder.com/800x400/000000/FFFFFF?text=Image+Not+Found';">
-        </div>
-        <div class="support-buttons">
-            <a href="#donate-link" class="btn">Faire un don</a>
-        </div>
-    </div>
-</section>
-<div class="section-separator"></div>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<section id="bureau-executif" class="section">
-    <div class="content-wrapper">
-        <h2>Bureau Exécutif</h2>
-        <div class="executive-grid">
-            <div class="executive-member">
-                <img src="img/president1.jpg" alt="Président des électoraux" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-                <h3>Président des électoraux</h3>
-                <p>Un résumé du président des électoraux...</p>
-            </div>
-            <div class="executive-member">
-                <img src="img/president2.jpg" alt="Président du parti" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-                <h3>Président du parti</h3>
-                <p>Un résumé du président du parti...</p>
-            </div>
-            <div class="executive-member">
-                <img src="img/secretary1.jpg" alt="Secrétaire Général" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-                <h3>Secrétaire Général</h3>
-                <p>Un résumé du secrétaire général...</p>
-            </div>
-            <div class="executive-member">
-                <img src="img/secretary2.jpg" alt="Secrétaire National" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-                <h3>Secrétaire National</h3>
-                <p>Un résumé du secrétaire national...</p>
-            </div>
-            <div class="executive-member">
-                <img src="img/secretary3.jpg" alt="Secrétaire Médical Communication" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-                <h3>Secrétaire Médical Communication</h3>
-                <p>Un résumé du secrétaire médical communication...</p>
-            </div>
-            <div class="executive-member">
-                <img src="img/chef_projet.jpg" alt="Chef de Projet" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
-                <h3>Chef de Projet</h3>
-                <p>Un résumé du chef de projet...</p>
-            </div>
+    <div class="section-separator"></div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <section id="president" class="section">
+        <div class="content-wrapper">
+            <h2>Président de LERK</h2>
             <div class="image-container">
-                <img src="img/groupe.jpeg" alt="Président Rénovateur" onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                <img src="img/H1.jpeg" alt="Président Rénovateur"
+                    onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+            </div>
+            <p>Je suis Blanchard Teta Mwamba, né à Kinshasa en RDC. J'ai débuté ma carrière politique en 2009, bien que
+                mon parcours m'ait déjà tracé une destinée politique sans que je m'en rende compte. Sociologue,
+                philosophe de formation, égyptologue, père d'une fille adorable.</p>
+            <p>Mon entrée en politique a été marquée par une scène horrible qui s'est déroulée à l'est de la RDC. Cela a
+                suscité en moi une colère, une révolte qui fait de moi aujourd'hui un acteur politique œuvrant pour la
+                justice sociale et la social-démocratie.</p>
+            <p>Mon équipe et moi nous engageons à offrir à la société congolaise une autre approche du Congo. Nous
+                voulons lui faire savoir que tout est possible, il suffit d'avoir de bons gestionnaires et d'une bonne
+                méthodologie en politique pour développer notre pays. Rejoignez-nous afin d'écrire cette histoire
+                ensemble.</p>
+            <div class="support-buttons">
+                <a href="#join" class="btn">Rejoindre le Mouvement</a>
+                <a href="#donate" class="btn">Faire un don</a>
             </div>
         </div>
-    </div>
-</section>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<section id="evenements" class="section">
-    <div class="content-wrapper">
-        <h2>Nos Événements</h2>
-        <div class="calendar-container">
-            <iframe src="https://calendar.google.com/calendar/embed?src=bWF4aW1lLmRpZXQ3NkBnbWFpbC5jb20&ctz=Your_Timezone" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </section>
+
+    <div class="section-separator"></div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <section id="join" class="section">
+        <div class="content-wrapper">
+            <h2>Rejoignez-nous</h2>
+            <p>Rejoignez LERK! et participez à cette grande aventure...</p>
+            <form id="contactForm">
+                <label for="name">Nom:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="surname">Prénom:</label><br>
+                <input type="text" id="surname" name="surname" required><br><br>
+
+                <label for="email">Adresse Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Numéro de Téléphone:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <button type="submit">Envoyer</button>
+            </form>
         </div>
+    </section>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <section id="adhesion" class="section">
+        <div class="content-wrapper">
+            <h2>Adhésion</h2>
+            <p>Rejoignez LERK et participez à cette grande aventure pour le renouveau du Congo. Sélectionnez une option
+                de paiement pour devenir membre :</p>
+            <div class="payment-options">
+                <div class="payment-option">
+                    <h3>Adhésion Standard</h3>
+                    <p>20€ par mois</p>
+                    <a href="#" class="btn">Payer avec Stripe</a>
+                </div>
+                <div class="payment-option">
+                    <h3>Adhésion Premium</h3>
+                    <p>50€ par mois</p>
+                    <a href="#" class="btn">Payer avec Stripe</a>
+                </div>
+                <div class="payment-option">
+                    <h3>Adhésion à vie</h3>
+                    <p>500€ une fois</p>
+                    <a href="#" class="btn">Payer avec Stripe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <section id="don" class="section">
+        <div class="content-wrapper">
+            <h2>Faire un Don</h2>
+            <div class="image-container">
+                <img src="img/donation-image.jpg" alt="Faire un don image"
+                    onerror="this.src='https://via.placeholder.com/800x400/000000/FFFFFF?text=Image+Not+Found';">
+            </div>
+            <div class="support-buttons">
+                <a href="#donate-link" class="btn">Faire un don</a>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <section id="bureau-executif" class="section">
+        <div class="content-wrapper">
+            <h2>Bureau Exécutif</h2>
+            <div class="executive-grid">
+                <div class="executive-member">
+                    <img src="img/president1.jpg" alt="Président des électoraux"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <h3>Président des électoraux</h3>
+                    <p>Un résumé du président des électoraux...</p>
+                </div>
+                <div class="executive-member">
+                    <img src="img/president2.jpg" alt="Président du parti"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <h3>Président du parti</h3>
+                    <p>Un résumé du président du parti...</p>
+                </div>
+                <div class="executive-member">
+                    <img src="img/secretary1.jpg" alt="Secrétaire Général"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <h3>Secrétaire Général</h3>
+                    <p>Un résumé du secrétaire général...</p>
+                </div>
+                <div class="executive-member">
+                    <img src="img/secretary2.jpg" alt="Secrétaire National"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <h3>Secrétaire National</h3>
+                    <p>Un résumé du secrétaire national...</p>
+                </div>
+                <div class="executive-member">
+                    <img src="img/secretary3.jpg" alt="Secrétaire Médical Communication"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <h3>Secrétaire Médical Communication</h3>
+                    <p>Un résumé du secrétaire médical communication...</p>
+                </div>
+                <div class="executive-member">
+                    <img src="img/chef_projet.jpg" alt="Chef de Projet"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                    <h3>Chef de Projet</h3>
+                    <p>Un résumé du chef de projet...</p>
+                </div>
+                <div class="image-container">
+                    <img src="img/groupe.jpeg" alt="Président Rénovateur"
+                        onerror="this.src='https://via.placeholder.com/150/000000/FFFFFF?text=Image+Not+Found';">
+                </div>
+            </div>
+        </div>
+    </section>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <section id="evenements" class="section">
+        <div class="content-wrapper">
+            <h2>Nos Événements</h2>
+            <div class="calendar-container">
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?src=bWF4aW1lLmRpZXQ3NkBnbWFpbC5jb20&ctz=Your_Timezone"
+                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>© 2024 LERK! Tous droits réservés.</p>
+    </footer>
+    <!-- Contact Us Button -->
+    <div class="contact-us">
+        <button class="contact-us-button" id="contactUsBtn">Contact Us</button>
     </div>
-</section>
 
+    <!-- Popup Form (hidden initially) -->
+    <div id="popupForm" class="popup-form" style="display: none;">
+        <form id="popupContactForm">
+            <h3>Contact Us</h3>
+            <label for="popupName">Nom:</label><br>
+            <input type="text" id="popupName" name="name" required><br><br>
 
-<footer>
-    <p>© 2024 LERK! Tous droits réservés.</p>
-</footer>
-<!-- Contact Us Button -->
-<div class="contact-us">
-  <button class="contact-us-button" id="contactUsBtn">Contact Us</button>
-</div>
+            <label for="popupSurname">Prénom:</label><br>
+            <input type="text" id="popupSurname" name="surname" required><br><br>
 
-<!-- Popup Form (hidden initially) -->
-<div id="popupForm" class="popup-form" style="display: none;">
-  <form id="popupContactForm">
-    <h3>Contact Us</h3>
-    <label for="popupName">Nom:</label><br>
-    <input type="text" id="popupName" name="name" required><br><br>
+            <label for="popupEmail">Adresse Email:</label><br>
+            <input type="email" id="popupEmail" name="email" required><br><br>
 
-    <label for="popupSurname">Prénom:</label><br>
-    <input type="text" id="popupSurname" name="surname" required><br><br>
+            <label for="popupPhone">Numéro de Téléphone:</label><br>
+            <input type="tel" id="popupPhone" name="phone" required><br><br>
 
-    <label for="popupEmail">Adresse Email:</label><br>
-    <input type="email" id="popupEmail" name="email" required><br><br>
-
-    <label for="popupPhone">Numéro de Téléphone:</label><br>
-    <input type="tel" id="popupPhone" name="phone" required><br><br>
-
-    <button type="submit">Envoyer</button>
-    <button type="button" id="closePopupBtn">Fermer</button>
-  </form>
-</div>
-```
+            <button type="submit">Envoyer</button>
+            <button type="button" id="closePopupBtn">Fermer</button>
+        </form>
+    </div>
+    ```
 
 </body>
 <script type="text/javascript">
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-    var name = document.getElementById('name').value;
-    var surname = document.getElementById('surname').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
+        var name = document.getElementById('name').value;
+        var surname = document.getElementById('surname').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
 
-    var mailtoLink = `mailto:renovateur.lerk@gmail.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
-    
-    window.location.href = mailtoLink;
-});
-//Contact us button/form
-// Show popup form on button click
-document.getElementById('contactUsBtn').addEventListener('click', function() {
-  document.getElementById('popupForm').style.display = document.getElementById('popupForm').style.display === 'block' ? 'none' : 'block';
-});
+        var mailtoLink = `mailto:renovateur.lerk@gmail.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
 
-// Close popup form
-document.getElementById('closePopupBtn').addEventListener('click', function() {
-  document.getElementById('popupForm').style.display = 'none';
-});
+        window.location.href = mailtoLink;
+    });
+    //Contact us button/form
+    // Show popup form on button click
+    document.getElementById('contactUsBtn').addEventListener('click', function () {
+        document.getElementById('popupForm').style.display = document.getElementById('popupForm').style.display === 'block' ? 'none' : 'block';
+    });
 
-// Handle popup form submission
-document.getElementById('popupContactForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+    // Close popup form
+    document.getElementById('closePopupBtn').addEventListener('click', function () {
+        document.getElementById('popupForm').style.display = 'none';
+    });
 
-  var name = document.getElementById('popupName').value;
-  var surname = document.getElementById('popupSurname').value;
-  var email = document.getElementById('popupEmail').value;
-  var phone = document.getElementById('popupPhone').value;
+    // Handle popup form submission
+    document.getElementById('popupContactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-  var mailtoLink = `mailto:renovateur.lerk@gmail.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
+        var name = document.getElementById('popupName').value;
+        var surname = document.getElementById('popupSurname').value;
+        var email = document.getElementById('popupEmail').value;
+        var phone = document.getElementById('popupPhone').value;
 
-  window.location.href = mailtoLink;
+        var mailtoLink = `mailto:renovateur.lerk@gmail.com?subject=Contact%20from%20${name}%20${surname}&body=Nom: ${name}%0APrénom: ${surname}%0AEmail: ${email}%0ATéléphone: ${phone}`;
 
-  document.getElementById('popupForm').style.display = 'none';
-});
+        window.location.href = mailtoLink;
+
+        document.getElementById('popupForm').style.display = 'none';
+    });
+    //Video part
+    const video = document.getElementById('myVideo');
+
+    // Listen for the video to end
+    video.addEventListener('ended', function () {
+        // Option 1: Hide the video
+        video.style.display = 'none';
+
+        // Option 2: Remove the video from the DOM (uncomment the line below if you prefer this)
+        // video.remove();
+    });
 </script>
+
 </html>
